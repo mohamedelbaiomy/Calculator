@@ -1,0 +1,369 @@
+import 'package:animated_button/animated_button.dart';
+import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
+
+class Calculator extends StatefulWidget {
+  const Calculator({super.key});
+
+  @override
+  State<Calculator> createState() => _CalculatorState();
+}
+
+class _CalculatorState extends State<Calculator> {
+  String output = '';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text(
+          "Calculator",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 50,
+                padding: const EdgeInsets.only(
+                  left: 5,
+                  right: 5,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: Text(
+                    output == '' ? 0.toString() : output,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.visible,
+                  ),
+                ),
+              ),
+              Container(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  btn(
+                    text: 'C',
+                    onTap: () {
+                      setState(() {
+                        output = '';
+                      });
+                    },
+                    btnWidth: 65,
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '<-',
+                    onTap: () {
+                      setState(() {
+                        output = output.substring(0, output.length - 1);
+                      });
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '%',
+                    onTap: () {
+                      if (output.isEmpty ||
+                          (output[output.length - 1] == '*' ||
+                              output[output.length - 1] == '/' ||
+                              output[output.length - 1] == '+' ||
+                              output[output.length - 1] == '-')) {
+                      } else {
+                        setState(() {
+                          output += ' % ';
+                        });
+                      }
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '/',
+                    onTap: () {
+                      if (output.isEmpty ||
+                          (output[output.length - 1] == '*' ||
+                              output[output.length - 1] == '/' ||
+                              output[output.length - 1] == '+' ||
+                              output[output.length - 1] == '-')) {
+                      } else {
+                        setState(() {
+                          output += ' / ';
+                        });
+                      }
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+              Container(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  btn(
+                    btnWidth: 65,
+                    text: '7',
+                    onTap: () {
+                      setState(() {
+                        output += '7';
+                      });
+                    },
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    text: '8',
+                    onTap: () {
+                      setState(() {
+                        output += '8';
+                      });
+                    },
+                    btnWidth: 65,
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '9',
+                    onTap: () {
+                      setState(() {
+                        output += '9';
+                      });
+                    },
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: 'x',
+                    onTap: () {
+                      if (output.isEmpty ||
+                          (output[output.length - 1] == '*' ||
+                              output[output.length - 1] == '/' ||
+                              output[output.length - 1] == '+' ||
+                              output[output.length - 1] == '-')) {
+                      } else {
+                        setState(() {
+                          output += ' x ';
+                        });
+                      }
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+              Container(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  btn(
+                    text: '4',
+                    onTap: () {
+                      setState(() {
+                        output += '4';
+                      });
+                    },
+                    btnWidth: 65,
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    text: '5',
+                    onTap: () {
+                      setState(() {
+                        output += '5';
+                      });
+                    },
+                    btnWidth: 65,
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    text: '6',
+                    onTap: () {
+                      setState(() {
+                        output += '6';
+                      });
+                    },
+                    btnWidth: 65,
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '-',
+                    onTap: () {
+                      if (output.isEmpty ||
+                          (output[output.length - 1] == '*' ||
+                              output[output.length - 1] == '/' ||
+                              output[output.length - 1] == '+' ||
+                              output[output.length - 1] == '-')) {
+                      } else {
+                        setState(() {
+                          output += ' - ';
+                        });
+                      }
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+              Container(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  btn(
+                    btnWidth: 65,
+                    text: '1',
+                    onTap: () {
+                      setState(() {
+                        output += '1';
+                      });
+                    },
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    text: '2',
+                    onTap: () {
+                      setState(() {
+                        output += '2';
+                      });
+                    },
+                    btnWidth: 65,
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '3',
+                    onTap: () {
+                      setState(() {
+                        output += '3';
+                      });
+                    },
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '+',
+                    onTap: () {
+                      if (output.isEmpty ||
+                          (output[output.length - 1] == '*' ||
+                              output[output.length - 1] == '/' ||
+                              output[output.length - 1] == '+' ||
+                              output[output.length - 1] == '-')) {
+                      } else {
+                        setState(() {
+                          output += ' + ';
+                        });
+                      }
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+              Container(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  btn(
+                    btnWidth: 65,
+                    text: '0',
+                    onTap: () {
+                      setState(() {
+                        output += '0';
+                      });
+                    },
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 65,
+                    text: '.',
+                    onTap: () {
+                      setState(() {
+                        output += '.';
+                      });
+                    },
+                    btnColor: Colors.white,
+                    textColor: Colors.black,
+                  ),
+                  btn(
+                    btnWidth: 170,
+                    text: '=',
+                    onTap: () {
+                      output = output.replaceAll('x', '*');
+                      Parser p = Parser();
+                      Expression exp = p.parse(output);
+                      String result = exp
+                          .evaluate(
+                            EvaluationType.REAL,
+                            ContextModel(),
+                          )
+                          .toString();
+                      setState(() {
+                        output = result;
+                      });
+                    },
+                    btnColor: Colors.orange.shade300,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget btn({
+    required String text,
+    required Function() onTap,
+    required Color btnColor,
+    required Color textColor,
+    required double btnWidth,
+  }) {
+    return AnimatedButton(
+      onPressed: onTap,
+      color: btnColor,
+      width: btnWidth,
+      child: Text(
+        text,
+        style: TextStyle(
+          color: textColor,
+          fontSize: 17,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
+}
