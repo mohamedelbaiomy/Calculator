@@ -92,7 +92,7 @@ class _CalculatorState extends State<Calculator> {
                               output[output.length - 1] == '-')) {
                       } else {
                         setState(() {
-                          output += ' % ';
+                          output += '%';
                         });
                       }
                     },
@@ -110,7 +110,7 @@ class _CalculatorState extends State<Calculator> {
                               output[output.length - 1] == '-')) {
                       } else {
                         setState(() {
-                          output += ' / ';
+                          output += '/';
                         });
                       }
                     },
@@ -167,7 +167,7 @@ class _CalculatorState extends State<Calculator> {
                               output[output.length - 1] == '-')) {
                       } else {
                         setState(() {
-                          output += ' x ';
+                          output += 'x';
                         });
                       }
                     },
@@ -224,7 +224,7 @@ class _CalculatorState extends State<Calculator> {
                               output[output.length - 1] == '-')) {
                       } else {
                         setState(() {
-                          output += ' - ';
+                          output += '-';
                         });
                       }
                     },
@@ -281,7 +281,7 @@ class _CalculatorState extends State<Calculator> {
                               output[output.length - 1] == '-')) {
                       } else {
                         setState(() {
-                          output += ' + ';
+                          output += '+';
                         });
                       }
                     },
