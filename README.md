@@ -1,16 +1,9 @@
-# calculator
 
-Fully Functional Calculator app
+# Calculator
 
-## Getting Started
+Fully Functional Calculator app using Flutter
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshot
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App Screenshots](https://github.com/mohamedelbaiomy/Calculator/blob/master/screenshots/Mokup.png?raw=true)
