@@ -336,10 +336,10 @@ class _CalculatorState extends State<Calculator> {
                       } catch (e) {
                         print(e.toString());
                         setState(() {
-                          if (e.toString() ==
-                              'RangeError (index): Invalid value: Valid value range is empty: -1') {
-                            output = 'Syntax Error';
-                          }
+                          e.toString() ==
+                                  'RangeError (index): Invalid value: Valid value range is empty: -1'
+                              ? output = 'Syntax Error'
+                              : '';
                         });
                       }
                     },
