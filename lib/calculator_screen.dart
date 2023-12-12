@@ -320,18 +320,28 @@ class _CalculatorState extends State<Calculator> {
                     btnWidth: 170,
                     text: '=',
                     onTap: () {
-                      output = output.replaceAll('x', '*');
-                      Parser p = Parser();
-                      Expression exp = p.parse(output);
-                      String result = exp
-                          .evaluate(
-                            EvaluationType.REAL,
-                            ContextModel(),
-                          )
-                          .toString();
-                      setState(() {
-                        output = result;
-                      });
+                      try {
+                        output = output.replaceAll('x', '*');
+                        Parser p = Parser();
+                        Expression exp = p.parse(output);
+                        String result = exp
+                            .evaluate(
+                              EvaluationType.REAL,
+                              ContextModel(),
+                            )
+                            .toString();
+                        setState(() {
+                          output = result;
+                        });
+                      } catch (e) {
+                        print(e.toString());
+                        setState(() {
+                          if (e.toString() ==
+                              'RangeError (index): Invalid value: Valid value range is empty: -1') {
+                            output = 'Syntax Error';
+                          }
+                        });
+                      }
                     },
                     btnColor: Colors.orange.shade300,
                     textColor: Colors.black,
