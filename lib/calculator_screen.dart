@@ -14,13 +14,13 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         title: const Text(
           "Calculator",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,
@@ -39,15 +39,15 @@ class _CalculatorState extends State<Calculator> {
                   right: 5,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Align(
                   alignment: AlignmentDirectional.centerEnd,
                   child: Text(
                     output == '' ? 0.toString() : output,
                     style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 35,
                     ),
                     maxLines: 2,
@@ -66,23 +66,23 @@ class _CalculatorState extends State<Calculator> {
                         output = '';
                       });
                     },
-                    btnWidth: 65,
-                    btnColor: Colors.orange.shade300,
+                    btnWidth: 70,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '<-',
                     onTap: () {
                       setState(() {
                         output = output.substring(0, output.length - 1);
                       });
                     },
-                    btnColor: Colors.orange.shade300,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '%',
                     onTap: () {
                       if (output.isEmpty ||
@@ -96,11 +96,11 @@ class _CalculatorState extends State<Calculator> {
                         });
                       }
                     },
-                    btnColor: Colors.orange.shade300,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '/',
                     onTap: () {
                       if (output.isEmpty ||
@@ -114,7 +114,7 @@ class _CalculatorState extends State<Calculator> {
                         });
                       }
                     },
-                    btnColor: Colors.orange.shade300,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                 ],
@@ -124,7 +124,7 @@ class _CalculatorState extends State<Calculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '7',
                     onTap: () {
                       setState(() {
@@ -141,12 +141,12 @@ class _CalculatorState extends State<Calculator> {
                         output += '8';
                       });
                     },
-                    btnWidth: 65,
+                    btnWidth: 70,
                     btnColor: Colors.white,
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '9',
                     onTap: () {
                       setState(() {
@@ -157,7 +157,7 @@ class _CalculatorState extends State<Calculator> {
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: 'x',
                     onTap: () {
                       if (output.isEmpty ||
@@ -171,7 +171,7 @@ class _CalculatorState extends State<Calculator> {
                         });
                       }
                     },
-                    btnColor: Colors.orange.shade300,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                 ],
@@ -187,7 +187,7 @@ class _CalculatorState extends State<Calculator> {
                         output += '4';
                       });
                     },
-                    btnWidth: 65,
+                    btnWidth: 70,
                     btnColor: Colors.white,
                     textColor: Colors.black,
                   ),
@@ -198,7 +198,7 @@ class _CalculatorState extends State<Calculator> {
                         output += '5';
                       });
                     },
-                    btnWidth: 65,
+                    btnWidth: 70,
                     btnColor: Colors.white,
                     textColor: Colors.black,
                   ),
@@ -209,12 +209,12 @@ class _CalculatorState extends State<Calculator> {
                         output += '6';
                       });
                     },
-                    btnWidth: 65,
+                    btnWidth: 70,
                     btnColor: Colors.white,
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '-',
                     onTap: () {
                       if (output.isEmpty ||
@@ -228,7 +228,7 @@ class _CalculatorState extends State<Calculator> {
                         });
                       }
                     },
-                    btnColor: Colors.orange.shade300,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                 ],
@@ -238,7 +238,7 @@ class _CalculatorState extends State<Calculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '1',
                     onTap: () {
                       setState(() {
@@ -255,12 +255,12 @@ class _CalculatorState extends State<Calculator> {
                         output += '2';
                       });
                     },
-                    btnWidth: 65,
+                    btnWidth: 70,
                     btnColor: Colors.white,
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '3',
                     onTap: () {
                       setState(() {
@@ -271,7 +271,7 @@ class _CalculatorState extends State<Calculator> {
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '+',
                     onTap: () {
                       if (output.isEmpty ||
@@ -285,7 +285,7 @@ class _CalculatorState extends State<Calculator> {
                         });
                       }
                     },
-                    btnColor: Colors.orange.shade300,
+                    btnColor: Colors.grey.shade300,
                     textColor: Colors.black,
                   ),
                 ],
@@ -295,7 +295,7 @@ class _CalculatorState extends State<Calculator> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '0',
                     onTap: () {
                       setState(() {
@@ -306,7 +306,7 @@ class _CalculatorState extends State<Calculator> {
                     textColor: Colors.black,
                   ),
                   btn(
-                    btnWidth: 65,
+                    btnWidth: 70,
                     text: '.',
                     onTap: () {
                       setState(() {
@@ -334,7 +334,7 @@ class _CalculatorState extends State<Calculator> {
                           output = result;
                         });
                       } catch (e) {
-                        print(e.toString());
+                        //print(e.toString());
                         setState(() {
                           e.toString() ==
                                   'RangeError (index): Invalid value: Valid value range is empty: -1'
@@ -366,6 +366,8 @@ class _CalculatorState extends State<Calculator> {
       onPressed: onTap,
       color: btnColor,
       width: btnWidth,
+      height: 70,
+      shadowDegree: ShadowDegree.dark,
       child: Text(
         text,
         style: TextStyle(
